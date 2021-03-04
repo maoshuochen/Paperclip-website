@@ -8,6 +8,16 @@ canvas {
     display: block;
 }
 
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+p {
+    margin: 0;
+}
+
 
 /* navigation bar */
 
@@ -126,4 +136,29 @@ canvas {
     height: 100%;
 }
 
-.group-items {}
+#group-menu {
+    position: absolute;
+    top: 14%;
+}
+
+.group-items {
+    height: 48px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.group-items-icon {
+    height: 60%;
+    width: 8%;
+    margin-left: 14%;
+}
+
+.group-items-text {
+    padding-left: 40px;
+    font-size: 20pt;
+    font-weight: 500;
+    color: #424242;
+}

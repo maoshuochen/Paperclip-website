@@ -6,39 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Document</title>
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <title>Paperclip - Index</title>
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <div id="nav-bar">
         <div id="logo-container">
-            <img id="logo-image" src="./assets/logo.png">
+            <img id="logo-image" :src=logo.image>
         </div>
         <div id="nav-bar-menu">
-            <div class="menu-items">
-                <img class="menu-icons" src="./assets/nav-bar-menu/1-subs.svg">
-                <p class="menu-names">Subs</p>
-            </div>
-            <div class="menu-items">
-                <img class="menu-icons" src="./assets/nav-bar-menu/2-note.svg">
-                <p class="menu-names">Notes</p>
-            </div>
-            <div class="menu-items">
-                <img class="menu-icons" src="./assets/nav-bar-menu/3-canvas.svg">
-                <p class="menu-names">Canvas</p>
-            </div>
-            <div class="menu-items">
-                <img class="menu-icons" src="./assets/nav-bar-menu/4-analysis.svg">
-                <p class="menu-names">Analysis</p>
+            <div class="menu-items" v-for="item in items">
+                <img class="menu-icons" :src="item.image">
+                <p class="menu-names">{{item.name}}</p>
             </div>
         </div>
+    </div>
+
+    <!-- Side Panel -->
+    <div id="side-panel">
+        <div id="search-bar">
+            <input type="text" id="search-text">
+            <button id="search-button">
+                <img id="search-icon" src="./assets/side-panel/search-icon.svg">
+            </button>
+        </div>
+        <div id="group-menu">
+            <ul>
+                <li class="group-items" v-for="item in items">
+                    <img class="group-items-icon" :src="item.image">
+                    <p class="group-items-text">{{item.text}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
-        <!-- Import index.js -->
-        <script src="./index.js"></script>
+    <!-- Import index.js -->
+    <script src="./index.js"></script>
 
-        <!-- Import component -->
+    <!-- Import component -->
+
+    <!-- Mount App -->
+    <script>
+        var mountedNavBar = navBar.mount('#nav-bar')
+        var mountedGroupMenu = groupMenu.mount('#group-menu')
+    </script>
 </body>
 
 </html>
