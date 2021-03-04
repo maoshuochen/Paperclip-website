@@ -5,67 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./assets/index.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div id="counter">
-        <p>Counter: {{counter}}</p>
-        <button v-on:click="stopCounter">Stop Counter</button>
-    </div>
+    <div id="nav-bar">
+        <div id="logo-container">
+            <img id="logo-image" src="./assets/logo.png">
+        </div>
+        <div id="nav-bar-menu">
+            <div class="menu-items">
+                <img class="menu-icons" src="./assets/nav-bar-menu/1-subs.svg">
+                <p class="menu-names">Subs</p>
+            </div>
+            <div class="menu-items">
+                <img class="menu-icons" src="./assets/nav-bar-menu/2-note.svg">
+                <p class="menu-names">Notes</p>
+            </div>
+            <div class="menu-items">
+                <img class="menu-icons" src="./assets/nav-bar-menu/3-canvas.svg">
+                <p class="menu-names">Canvas</p>
+            </div>
+            <div class="menu-items">
+                <img class="menu-icons" src="./assets/nav-bar-menu/4-analysis.svg">
+                <p class="menu-names">Analysis</p>
+            </div>
+        </div>
 
-    <div id="watch">
-        <p>
-            {{message}}
-        </p>
-    </div>
 
-    <div id="app2">
-        <span v-bind:title="message">
-            app2: Hover to see the message!
-        </span>
-    </div>
+        <!-- Import index.js -->
+        <script src="./index.js"></script>
 
-    <div id="app3">
-        <p v-if='seen'>app3: v-if test</p>
-        <button v-on:click="switchVis"> Show/Hide </button>
-    </div>
-
-    <div id="app4">
-        <p>
-            app4:
-        </p>
-        <ol>
-            <li v-for='i in list'>
-                {{i.text}}
-            </li>
-        </ol>
-    </div>
-
-    <div id="app5">
-        <p>
-            app5: {{message}}
-        </p>
-        <button v-on:click="reverse">
-            Click to reverse the message!
-        </button>
-    </div>
-
-    <div id="app6">
-        <p>
-            {{message}}
-        </p>
-        <input v-model="message">
-    </div>
-
-    <div id="app7">
-        <button-counter></button-counter>
-    </div>
-
-    <!-- cite index.js -->
-    <script src="index.js"></script>
+        <!-- Import component -->
 </body>
 
 </html>
