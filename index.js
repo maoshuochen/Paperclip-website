@@ -57,3 +57,27 @@ var groupMenu = Vue.createApp({
         }
     }
 })
+
+var articlesGroup = Vue.createApp({
+    data() {
+        return {
+            articles: [{
+                    index: 1,
+                    type: "Journal Article",
+                    author: "Andy Extance",
+                    date: "October 2019",
+                    position: "Nature-VOL 56-Toolbox",
+                    title: 'How AI Technology can tame the scientific literature',
+                    description: 'description of article1',
+                    image: ''
+                },
+                {
+                    index: 2,
+                    title: 'How AI Technology can tame the scientific literature',
+                    description: 'description of article2',
+                    image: ''
+                }
+            ]
+        }
+    }
+})
