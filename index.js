@@ -2,28 +2,28 @@ var navBar = Vue.createApp({
     data() {
         return {
             logo: {
-                image: "./assets/logo.png"
+                image: "./assets/nav-bar/logo.png"
             },
 
             items: [{
                     index: 1,
                     name: 'Subs',
-                    image: "./assets/nav-bar-menu/1-subs.svg"
+                    image: "./assets/nav-bar/1-subs.svg"
                 },
                 {
                     index: 2,
                     name: 'Notes',
-                    image: "./assets/nav-bar-menu/2-note.svg"
+                    image: "./assets/nav-bar/2-note.svg"
                 },
                 {
                     index: 3,
                     name: 'Canvas',
-                    image: "./assets/nav-bar-menu/3-canvas.svg"
+                    image: "./assets/nav-bar/3-canvas.svg"
                 },
                 {
                     index: 4,
                     name: 'Analysis',
-                    image: "./assets/nav-bar-menu/4-analysis.svg"
+                    image: "./assets/nav-bar/4-analysis.svg"
                 }
             ]
         }
@@ -101,6 +101,21 @@ var articlesGroup = Vue.createApp({
                     cite: 3,
                     comment: 52,
                     trend: 60
+                },
+                {
+                    index: 3,
+                    group: 3,
+                    type: "Journal Article",
+                    author: "Alex Bigelow",
+                    date: "January 2019",
+                    position: "arXiv:1812.06337 [physics]",
+                    title: 'Origraph: Interactive Network Wrangling',
+                    abstract: "Networks are a natural way of thinking about many datasets. The data on which a network is based, however, is rarely collected in a form that suits the analysis process, making it necessary to create and reshape networks. Data wrangling is widely acknowledged to be a critical part of the data analysis pipeline, yet interactive network wrangling has received little attention in the visualization research community. In this paper, we discuss a set of operations that are important for wrangling network datasets and introduce a visual data wrangling tool, Origraph, that enables analysts to apply these operations to their datasets. Key operations include creating a network from source data such as tables, reshaping a network by introducing new node or edge classes, filtering nodes or edges, and deriving new node or edge attributes. Our tool, Origraph, enables analysts to execute these operations with little to no programming, and to immediately visualize the results. Origraph provides views to investigate the network model, a sample of the network, and node and edge attributes. In addition, we introduce interfaces designed to aid analysts in specifying arguments for sensible network wrangling operations. We demonstrate the usefulness of Origraph in two Use Cases: first, we investigate gender bias in the film industry, and then the influence of money on the political support for the war in Yemen.",
+                    image: './assets/main-panel/article-images/article3.png',
+                    keywords: ['Human Center', 'Information System', 'Network'],
+                    cite: 8,
+                    comment: 53,
+                    trend: 46
                 }
             ]
         }
