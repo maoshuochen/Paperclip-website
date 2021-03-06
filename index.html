@@ -48,9 +48,41 @@
             <h1 id="group-title">All Articles</h1>
             <div id="articles-group">
                 <div class="single-article" v-for="article in articles">
-                    <img class="article-image" :src=article.image>
-                    <h2 class="article-title">{{article.title}}</h2>
-                    <p class="article-description">{{article.description}}</p>
+                    <div class="article-top-container">
+                        <div class="article-image-container">
+                            <img class="article-image" :src=article.image>
+                        </div>
+                        <div class="article-text-container">
+                            <p class="article-title">{{article.title}}</p>
+                            <div class="article-details">
+                                <p class="article-type">{{article.type}}</p>
+                                <p class="article-author_date">Author: {{article.author}} / {{article.date}}</p>
+                            </div>
+                            <div class="article-position">{{article.position}}</div>
+                            <p class="article-abstract">Abstract: {{article.abstract}}</p>
+                        </div>
+                    </div>
+                    <div class="article-bottom-container">
+                        <div class="article-keywords-container">
+                            <div class="article-keyword" v-for="keyword in article.keywords">{{keyword}}</div>
+                        </div>
+                        <div class="article-icons-container">
+                            <div class="article-icon-container">
+                                <img class="article-icon-img" src="./assets/main-panel/article-icons/cite.svg">
+                                <p class="article-icon-text">{{article.cite}}</p>
+                            </div>
+                            <div class="article-icon-container">
+                                <img class="article-icon-img" src="./assets/main-panel/article-icons/comment.svg">
+                                <p class="article-icon-text">{{article.comment}}</p>
+                            </div>
+                            <div class="article-icon-container">
+                                <img class="article-icon-img" src="./assets/main-panel/article-icons/trend.svg">
+                                <p class="article-icon-text">{{article.trend}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
