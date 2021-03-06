@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-size: 100%;
 }
 
 canvas {
@@ -75,17 +76,31 @@ p {
     height: 120px;
 }
 
-.menu-icons {
+.menu-icons-active {
     width: 1.2vw;
     height: 30%;
 }
 
-.menu-names {
+.menu-icons-inactive {
+    width: 1.2vw;
+    height: 30%;
+    filter: grayscale(100%) opacity(50%);
+}
+
+.menu-names-active {
     text-align: center;
     font-size: 0.9em;
     font-weight: 500;
     margin-top: 1vh;
     color: #424242;
+}
+
+.menu-names-inactive {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 1vh;
+    color: #bbb;
 }
 
 

@@ -8,21 +8,25 @@ var navBar = Vue.createApp({
             items: [{
                     index: 1,
                     name: 'Subs',
+                    active: true,
                     image: "./assets/nav-bar/1-subs.svg"
                 },
                 {
                     index: 2,
                     name: 'Notes',
+                    active: false,
                     image: "./assets/nav-bar/2-note.svg"
                 },
                 {
                     index: 3,
                     name: 'Canvas',
+                    active: false,
                     image: "./assets/nav-bar/3-canvas.svg"
                 },
                 {
                     index: 4,
                     name: 'Analysis',
+                    active: false,
                     image: "./assets/nav-bar/4-analysis.svg"
                 }
             ]
@@ -80,7 +84,7 @@ var articlesGroup = Vue.createApp({
                     date: "October 2019",
                     position: "Nature-VOL 56-Toolbox",
                     title: 'How AI Technology can tame the scientific literature',
-                    abstract: 'As artificially intelligent tools for literature and data exploration evolve, developers seek to automate how hypotheses are generated and validated.',
+                    abstract: 'As artificially intelligent tools for literature and data exploration evolve, developers seek to automate how hypotheses are generated and validated.When computer scientist Christian Berger’s team sought to get its project about self-driving vehicle algorithms on the road, it faced a daunting obstacle. The scientists, at the University of Gothenburg in Sweden, found an overwhelming number of papers on the topic — more than 10,000 — in a systematic literature review. Investigating them properly would have taken a year, Berger says.',
                     image: './assets/main-panel/article-images/article1.png',
                     keywords: ['AI-based', 'Nature Language Processing', 'Knowledge Graph'],
                     cite: 2,
@@ -116,6 +120,21 @@ var articlesGroup = Vue.createApp({
                     cite: 8,
                     comment: 53,
                     trend: 46
+                },
+                {
+                    index: 4,
+                    group: 1,
+                    type: "Journal Article",
+                    author: "Omar Alonso",
+                    date: "2019-07-18",
+                    position: "SIGIR '19: The 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval",
+                    title: 'Social Knowledge Graph Explorer',
+                    abstract: "We present SKG Explorer, an application for querying and browsing a social knowledge graph derived from Twitter that contains relationships between entities, links, and topics. A temporal dimension is also added for generating timelines for well-known events that allows the construction of stories in a wiki-like style. In this paper we describe the main components of the system and showcase some examples.",
+                    image: './assets/main-panel/article-images/article4.png',
+                    keywords: ['SKG Explorer', 'Twitter', 'Wiki-like'],
+                    cite: 2,
+                    comment: 34,
+                    trend: 34
                 }
             ]
         }
