@@ -6,25 +6,21 @@ var navBar = Vue.createApp({
             },
 
             items: [{
-                    index: 1,
                     name: 'Subs',
                     active: true,
                     image: "./assets/nav-bar/1-subs.svg"
                 },
                 {
-                    index: 2,
                     name: 'Notes',
                     active: false,
                     image: "./assets/nav-bar/2-note.svg"
                 },
                 {
-                    index: 3,
                     name: 'Canvas',
                     active: false,
                     image: "./assets/nav-bar/3-canvas.svg"
                 },
                 {
-                    index: 4,
                     name: 'Analysis',
                     active: false,
                     image: "./assets/nav-bar/4-analysis.svg"
@@ -38,17 +34,14 @@ var groupMenu = Vue.createApp({
     data() {
         return {
             items: [{
-                    index: 1,
                     text: 'All Articles',
                     image: './assets/side-panel/all-articles.svg'
                 },
                 {
-                    index: 2,
                     text: 'Read Later',
                     image: './assets/side-panel/read-later.svg'
                 },
                 {
-                    index: 3,
                     text: 'Knowledge Graph',
                     image: './assets/side-panel/arrow-right.svg',
                     tags: [
@@ -60,25 +53,43 @@ var groupMenu = Vue.createApp({
                     ]
                 },
                 {
-                    index: 2,
                     text: 'Data Vis',
                     image: './assets/side-panel/arrow-right.svg'
                 }
-            ]
+            ],
+            selectedItem: 0,
         }
+    },
+    methods: {
+        updateGroup(index) {
+            this.selectedItem = index;
+            console.log(this.selectedItem);
+            this.$emit('update-group', this.selectedItem);
+        },
+        isSelected(text) {
+            if (text == this.items[this.selectedItem].text) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    computed: {
+
     }
 })
 
-// group1: Knowledge Graph
-// group2: Data Vis
-// group3: Others
+// group2: Knowledge Graph
+// group3: Data Vis
+// group4: Others
 
 var articlesGroup = Vue.createApp({
     data() {
         return {
+            selectedGroup: 0,
+            groupTitles: ['All Articles', 'Read Later', 'Knowledge Graph', 'Data Vis'],
             articles: [{
-                    index: 1,
-                    group: 3,
+                    group: 4,
                     type: "Journal Article",
                     author: "Andy Extance",
                     date: "October 2019",
@@ -92,8 +103,7 @@ var articlesGroup = Vue.createApp({
                     trend: 50
                 },
                 {
-                    index: 2,
-                    group: 3,
+                    group: 4,
                     type: "Journal Article",
                     author: "Marco Cavallo",
                     date: "January 2019",
@@ -107,7 +117,6 @@ var articlesGroup = Vue.createApp({
                     trend: 60
                 },
                 {
-                    index: 3,
                     group: 3,
                     type: "Journal Article",
                     author: "Alex Bigelow",
@@ -122,8 +131,7 @@ var articlesGroup = Vue.createApp({
                     trend: 46
                 },
                 {
-                    index: 4,
-                    group: 1,
+                    group: 3,
                     type: "Journal Article",
                     author: "Omar Alonso",
                     date: "2019-07-18",
@@ -137,6 +145,17 @@ var articlesGroup = Vue.createApp({
                     trend: 34
                 }
             ]
+        }
+    },
+    methods: {
+        receiveUpdateGroup(selectedItem) {
+            this.selectedGroup = selectedItem;
+            console.log('Article group change: ' + this.selectedGroup);
+        }
+    },
+    computed: {
+        groupTitle() {
+            return this.groupTitles[this.selectedGroup];
         }
     }
 })

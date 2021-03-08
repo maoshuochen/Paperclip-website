@@ -13,6 +13,7 @@
 
 <body>
     <div id=main-div>
+        <!-- Navigation Bar -->
         <div id="nav-bar">
             <div id="logo-container">
                 <img id="logo-image" :src=logo.image>
@@ -36,19 +37,19 @@
                 </button>
             </div>
             <div id="group-menu">
-                <ul>
-                    <li class="group-items" v-for="item in items">
-                        <img class="group-items-icon" :src="item.image">
-                        <p class="group-items-text">{{item.text}}</p>
-                    </li>
-                </ul>
+                <button class="group-items" v-for="(item,index) in items" @click="updateGroup(index)">
+                    <div class="group-highlight-selected" v-if="isSelected(item.text)"></div>
+                    <div class="group-highlight-unselected" v-else></div>
+                    <img class="group-items-icon" :src="item.image">
+                    <p class="group-items-text">{{item.text}}</p>
+                </button>
             </div>
         </div>
 
         <!-- Main Panel -->
         <div id="main-panel">
-            <h1 id="group-title">All Articles</h1>
-            <div id="articles-group">
+            <div id="articles-group" @update-group="receiveUpdateGroup">
+                <h1 id="group-title">{{groupTitle}}</h1>
                 <div class="single-article" v-for="article in articles">
                     <div class="article-top-container">
                         <div class="article-image-container">
