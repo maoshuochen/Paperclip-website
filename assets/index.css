@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 canvas {
@@ -15,8 +16,17 @@ ul {
     margin-left: 0;
 }
 
+button {
+    font-family: inherit;
+    font-size: 1em;
+}
+
 p {
     margin: 0;
+}
+
+button {
+    font-family: inherit;
 }
 
 #main-div {
@@ -94,7 +104,7 @@ p {
 .menu-names-active {
     text-align: center;
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 1vh;
     color: #424242;
 }
@@ -102,7 +112,7 @@ p {
 .menu-names-inactive {
     text-align: center;
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 1vh;
     color: #bbb;
 }
@@ -175,7 +185,7 @@ p {
 }
 
 .group-items {
-    height: 48px;
+    height: 60px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -197,24 +207,23 @@ p {
 .group-highlight-selected {
     background-color: #4fc3f7;
     height: 100%;
-    width: 0.3vw;
+    width: 0.2vw;
 }
 
 .group-highlight-unselected {
-    background-color: none;
     height: 100%;
-    width: 0.3vw;
+    width: 0.2vw;
 }
 
 .group-items-icon {
-    height: 1.2vw;
+    height: 1.3vw;
     margin-left: 2vw;
 }
 
 .group-items-text {
     padding-left: 6%;
     font-size: 1.4em;
-    font-weight: 500;
+    font-weight: 600;
     color: #424242;
 }
 
@@ -281,7 +290,7 @@ p {
 
 .article-title {
     font-size: 1.4em;
-    font-weight: 800;
+    font-weight: 700;
     color: #424242;
 }
 
@@ -332,7 +341,7 @@ p {
     border-radius: 2vh;
     border: 2px solid #aaaaaa;
     font-size: 0.9em;
-    font-weight: 800;
+    font-weight: 700;
     color: #555;
 }
 
