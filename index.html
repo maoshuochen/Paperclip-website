@@ -15,19 +15,7 @@
 <body>
     <div id=main-div>
         <!-- Navigation Bar -->
-        <div id="nav-bar">
-            <div id="logo-container">
-                <img id="logo-image" :src=logo.image>
-            </div>
-            <div id="nav-bar-menu">
-                <div class="menu-items" v-for="item in items">
-                    <img class="menu-icons-active" :src="item.image" v-if="item.active">
-                    <img class="menu-icons-inactive" :src="item.image" v-else>
-                    <p class="menu-names-active" v-if="item.active">{{item.name}}</p>
-                    <p class="menu-names-inactive" v-else>{{item.name}}</p>
-                </div>
-            </div>
-        </div>
+        <nav-bar></nav-bar>
 
         <!-- Side Panel -->
         <div id="side-panel">
@@ -37,75 +25,27 @@
                     <img id="search-icon" src="./assets/side-panel/search-icon.svg">
                 </button>
             </div>
-            <div id="group-menu">
-                <button class="group-items" v-for="(item,index) in items" @click="updateGroup(index)">
-                    <div class="group-highlight-selected" v-if="isSelected(item.text)"></div>
-                    <div class="group-highlight-unselected" v-else></div>
-                    <img class="group-items-icon" :src="item.image">
-                    <p class="group-items-text">{{item.text}}</p>
-                </button>
-            </div>
+            <group-menu></group-menu>
         </div>
 
         <!-- Main Panel -->
         <div id="main-panel">
-            <div id="articles-group" @update-group="receiveUpdateGroup">
-                <h1 id="group-title">{{groupTitle}}</h1>
-                <div class="single-article" v-for="article in articles">
-                    <div class="article-top-container">
-                        <div class="article-image-container">
-                            <img class="article-image" :src=article.image>
-                        </div>
-                        <div class="article-text-container">
-                            <p class="article-title">{{article.title}}</p>
-                            <div class="article-details">
-                                <p class="article-type">{{article.type}}</p>
-                                <p class="article-author_date">Author: {{article.author}} / {{article.date}}</p>
-                            </div>
-                            <div class="article-position">{{article.position}}</div>
-                            <p class="article-abstract">Abstract: {{article.abstract}}</p>
-                        </div>
-                    </div>
-                    <div class="article-bottom-container">
-                        <div class="article-keywords-container">
-                            <div class="article-keyword" v-for="keyword in article.keywords">{{keyword}}</div>
-                        </div>
-                        <div class="article-icons-container">
-                            <div class="article-icon-container">
-                                <img class="article-icon-img" src="./assets/main-panel/article-icons/cite.svg">
-                                <p class="article-icon-text">{{article.cite}}</p>
-                            </div>
-                            <div class="article-icon-container">
-                                <img class="article-icon-img" src="./assets/main-panel/article-icons/comment.svg">
-                                <p class="article-icon-text">{{article.comment}}</p>
-                            </div>
-                            <div class="article-icon-container">
-                                <img class="article-icon-img" src="./assets/main-panel/article-icons/trend.svg">
-                                <p class="article-icon-text">{{article.trend}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+            <articles-group></articles-group>
         </div>
 
     </div>
-    <!-- Navigation Bar -->
-
-
 
     <!-- Import index.js -->
     <script src="./index.js"></script>
 
     <!-- Import component -->
+    <script src="components/NavBar.js"></script>
+    <script src="components/GroupMenu.js"></script>
+    <script src="components/ArticlesGroup.js"></script>
 
     <!-- Mount App -->
     <script>
-        var mountedNavBar = navBar.mount('#nav-bar')
-        var mountedGroupMenu = groupMenu.mount('#group-menu')
-        var mountedArticlesGroup = articlesGroup.mount('#articles-group')
+        var mountedApp = app.mount('#main-div')
     </script>
 </body>
 

@@ -21,6 +21,10 @@ button {
     font-size: 1em;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 p {
     margin: 0;
 }
@@ -84,6 +88,12 @@ button {
     /* 子元素垂直居中 */
     width: 100%;
     height: 120px;
+    background-color: #f9fafb;
+    border: none;
+}
+
+.menu-items:focus {
+    outline: none;
 }
 
 .menu-items:hover {
@@ -151,8 +161,9 @@ button {
     outline-style: none;
     border: 0px;
     background-color: #fafafb;
-    font-size: 20pt;
-    font-weight: 500;
+    color: #424242;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 #search-button {
@@ -164,6 +175,10 @@ button {
     margin-left: 2%;
     border: 0px;
     background: none;
+}
+
+#search-button:focus {
+    outline: none;
 }
 
 #search-icon {
@@ -304,7 +319,7 @@ button {
     padding: 0.2vh 0.5vw 0.3vh 0.5vw;
     border-radius: 5%;
     font-size: 0.6em;
-    font-weight: 600;
+    font-weight: 700;
     background-color: #e1f5fe;
     color: #017ac5;
 }
