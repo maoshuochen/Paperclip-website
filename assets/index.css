@@ -19,6 +19,7 @@ ul {
 button {
     font-family: inherit;
     font-size: 1em;
+    outline: 0;
 }
 
 button:hover {
@@ -200,23 +201,39 @@ button {
 }
 
 .group-items {
-    height: 60px;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     border: none;
     background-color: #f6f7f8;
     padding-left: 0;
 }
 
-.group-items:focus {
+.group-item-bar {
+    height: 60px;
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.group-item-bar:focus {
     outline: 0;
 }
 
-.group-items:hover {
+.group-item-bar:hover {
     background-color: #eee;
+}
+
+.group-toggle-zone {
+    display: block;
+    position: absolute;
+    width: 2vw;
+    height: 3vh;
+    left: 2vw;
+    z-index: 999;
 }
 
 .group-highlight-selected {
@@ -230,7 +247,13 @@ button {
     width: 0.2vw;
 }
 
-.group-items-icon {
+.group-items-icon-active {
+    height: 1.3vw;
+    margin-left: 2vw;
+    transform: rotate(90deg);
+}
+
+.group-items-icon-inactive {
     height: 1.3vw;
     margin-left: 2vw;
 }
@@ -240,6 +263,34 @@ button {
     font-size: 1.4em;
     font-weight: 600;
     color: #424242;
+}
+
+.group-item-tags {
+    display: flex;
+    flex-flow: wrap;
+    padding: 0.5vh 1vw;
+}
+
+.group-item-tag-1 {
+    width: fit-content;
+    padding: 0.4vh 0.5vw 0.5vh 0.5vw;
+    margin: 0.8vh 0.5vw;
+    border-radius: 0.5vh;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #b3e5fc;
+    color: #0269a8;
+}
+
+.group-item-tag-2 {
+    width: fit-content;
+    padding: 0.4vh 0.5vw 0.5vh 0.5vw;
+    margin: 0.8vh 0.5vw;
+    border-radius: 0.5vh;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #ffcdd2;
+    color: #e62639;
 }
 
 

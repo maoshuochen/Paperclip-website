@@ -1,8 +1,15 @@
 app.component('articles-group', {
+    props: {
+        groupIndex: {
+            type: Number,
+            default: 0
+        }
+    },
+
     template:
     /*html*/
         `
-    <div id="articles-group" @update-group="receiveUpdateGroup">
+    <div id="articles-group">
         <h1 id="group-title">{{groupTitle}}</h1>
         <div class="single-article" v-for="article in articles">
             <div class="article-top-container">
@@ -43,7 +50,6 @@ app.component('articles-group', {
     `,
     data() {
         return {
-            selectedGroup: 0,
             groupTitles: ['All Articles', 'Read Later', 'Knowledge Graph', 'Data Vis'],
             // group2: Knowledge Graph
             // group3: Data Vis
@@ -108,14 +114,14 @@ app.component('articles-group', {
         }
     },
     methods: {
-        receiveUpdateGroup(selectedItem) {
-            this.selectedGroup = selectedItem;
-            console.log('Article group change: ' + this.selectedGroup);
-        }
+        // receiveUpdateGroup(selectedItem) {
+        //     this.selectedGroup = selectedItem;
+        //     console.log('Article group change: ' + this.selectedGroup);
+        // }
     },
     computed: {
         groupTitle() {
-            return this.groupTitles[this.selectedGroup];
+            return this.groupTitles[this.groupIndex];
         }
     }
 })

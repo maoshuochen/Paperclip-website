@@ -1,4 +1,10 @@
 app.component('nav-bar', {
+    props: {
+        pageIndex: {
+            type: Number,
+            default: 0
+        }
+    },
     template:
     /*html*/
         `
