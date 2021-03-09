@@ -39,7 +39,14 @@ app.component('group-menu', {
                         { value: 'Nature Language Processing', type: 1 },
                         { value: 'Database', type: 1 },
                         { value: 'Cited Index', type: 1 },
-                        { value: 'Omar Alonso', type: 2 }
+                        { value: 'Omar Alonso', type: 2 },
+                        { value: 'Co-word Visualization', type: 1 },
+                        { value: 'Minjun Zhao', type: 2 },
+                        { value: 'Graph Neighborhood', type: 1 },
+                        { value: "AAMAS'19", type: 3 },
+                        { value: "CHI'20", type: 3 },
+                        { value: 'Intelligent Question and Answering System', type: 1 },
+                        { value: 'Information Retrieval', type: 1 }
                     ]
                 },
                 {
@@ -48,11 +55,17 @@ app.component('group-menu', {
                     image: './assets/side-panel/arrow-right.svg',
                     isActive: false,
                     tags: [
-                        { value: 'Knowledge Graph', type: 1 },
-                        { value: 'Nature Language Processing', type: 1 },
-                        { value: 'Database', type: 1 },
-                        { value: 'Cited Index', type: 1 },
-                        { value: 'Omar Alonso', type: 2 }
+                        { value: 'Image Analysis', type: 1 },
+                        { value: 'Data Mining', type: 1 },
+                        { value: 'Chih-Jen Lin', type: 2 },
+                        { value: 'Martin A. Fischler', type: 2 },
+                        { value: 'Robert C. Bolles', type: 2 },
+                        { value: "SIGMOD'19", type: 3 },
+                        { value: "ICSE'18", type: 3 },
+                        { value: "Cite Space", type: 1 },
+                        { value: 'Mining Association Rules', type: 1 },
+                        { value: 'Library', type: 1 },
+                        { value: 'Key Cryptosystems', type: 1 }
                     ]
                 }
             ],
