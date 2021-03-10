@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paperclip - Index</title>
+    <!-- Import Libraries: Vue.js/Mitt -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- Import Style&Fonts -->
     <link rel="stylesheet" href="./assets/index.css">
     <link href="https://fonts.font.im/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
-    <title>Paperclip - Index</title>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
 
         <!-- Main Panel -->
         <div id="main-panel">
-            <articles-group @update-group="receiveUpdateGroup"></articles-group>
+            <articles-group></articles-group>
         </div>
 
     </div>

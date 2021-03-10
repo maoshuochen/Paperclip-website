@@ -1,11 +1,4 @@
 app.component('articles-group', {
-    props: {
-        groupIndex: {
-            type: Number,
-            default: 0
-        }
-    },
-
     template:
     /*html*/
         `
@@ -50,6 +43,7 @@ app.component('articles-group', {
     `,
     data() {
         return {
+            groupIndex: 0,
             groupTitles: ['All Articles', 'Read Later', 'Knowledge Graph', 'Data Vis'],
             // group2: Knowledge Graph
             // group3: Data Vis
@@ -113,11 +107,10 @@ app.component('articles-group', {
             ]
         }
     },
-    methods: {
-        // receiveUpdateGroup(selectedItem) {
-        //     this.selectedGroup = selectedItem;
-        //     console.log('Article group change: ' + this.selectedGroup);
-        // }
+    created() {
+        emitter.on('update-group', (selectedItem) => {
+            this.groupIndex = selectedItem;
+        })
     },
     computed: {
         groupTitle() {

@@ -251,11 +251,14 @@ button {
     height: 1.3vw;
     margin-left: 2vw;
     transform: rotate(90deg);
+    transition: 0.2s;
 }
 
 .group-items-icon-inactive {
     height: 1.3vw;
     margin-left: 2vw;
+    transform: rotate(0deg);
+    transition: 0.2s;
 }
 
 .group-items-text {

@@ -1,3 +1,5 @@
+const emitter = mitt(); //Global Mitt Set-up
+
 var app = Vue.createApp({
     methods: {
         receiveUpdateGroup(selectedItem) {
