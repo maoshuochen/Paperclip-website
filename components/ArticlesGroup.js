@@ -4,7 +4,7 @@ app.component('articles-group', {
         `
     <div id="articles-group">
         <h1 id="group-title">{{groupTitle}}</h1>
-        <div class="single-article" v-for="article in articles">
+        <div class="single-article" v-for="article in activeArticles">
             <div class="article-top-container">
                 <div class="article-image-container">
                     <img class="article-image" :src=article.image>
@@ -50,6 +50,7 @@ app.component('articles-group', {
             // group4: Others
             articles: [{
                     group: 4,
+                    readLater: false,
                     type: "Journal Article",
                     author: "Andy Extance",
                     date: "October 2019",
@@ -63,7 +64,8 @@ app.component('articles-group', {
                     trend: 50
                 },
                 {
-                    group: 4,
+                    group: 3,
+                    readLater: true,
                     type: "Journal Article",
                     author: "Marco Cavallo",
                     date: "January 2019",
@@ -77,7 +79,8 @@ app.component('articles-group', {
                     trend: 60
                 },
                 {
-                    group: 3,
+                    group: 2,
+                    readLater: true,
                     type: "Journal Article",
                     author: "Alex Bigelow",
                     date: "January 2019",
@@ -91,7 +94,8 @@ app.component('articles-group', {
                     trend: 46
                 },
                 {
-                    group: 3,
+                    group: 2,
+                    readLater: true,
                     type: "Journal Article",
                     author: "Omar Alonso",
                     date: "2019-07-18",
@@ -108,13 +112,32 @@ app.component('articles-group', {
         }
     },
     created() {
-        emitter.on('update-group', (selectedItem) => {
+        emitter.on('updateGroup', (selectedItem) => {
             this.groupIndex = selectedItem;
         })
     },
     computed: {
         groupTitle() {
             return this.groupTitles[this.groupIndex];
+        },
+        activeArticles() {
+            let active = [];
+            if (this.groupIndex == 0) {
+                active = this.articles;
+            } else if (this.groupIndex == 1) {
+                for (i in this.articles) {
+                    if (this.articles[i].readLater) {
+                        active.push(this.articles[i]);
+                    }
+                }
+            } else {
+                for (i in this.articles) {
+                    if (this.articles[i].group == this.groupIndex) {
+                        active.push(this.articles[i]);
+                    }
+                }
+            }
+            return active;
         }
     }
 })

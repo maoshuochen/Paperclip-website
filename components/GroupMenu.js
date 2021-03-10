@@ -75,7 +75,7 @@ app.component('group-menu', {
     methods: {
         updateGroup(index) {
             this.selectedItem = index;
-            emitter.emit('update-group', this.selectedItem);
+            emitter.emit('updateGroup', this.selectedItem);
         },
         toggle(id) {
             console.log('toggle id: ' + id);
