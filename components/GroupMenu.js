@@ -3,7 +3,7 @@ app.component('group-menu', {
     /*html*/
         `
     <div id="group-menu">
-        <button class="group-items" v-for="(item,index) in items" @click="updateGroup(index)">
+        <button class="group-items" v-for="(item,index) in items" :key="item.id" @click="updateGroup(index)">
             <div class="group-item-bar">
                 <div class="group-toggle-zone" v-if="item.tags" @click="toggle(item.id)"></div>
                 <div class="group-highlight-selected" v-if="isSelected(item.text)"></div>

@@ -4,7 +4,7 @@ app.component('articles-group', {
         `
     <div id="articles-group">
         <h1 id="group-title">{{groupTitle}}</h1>
-        <div class="single-article" v-for="article in activeArticles">
+        <div class="single-article" v-for="article in activeArticles" :key="article.id">
             <div class="article-top-container">
                 <div class="article-image-container">
                     <img class="article-image" :src=article.image>
@@ -49,6 +49,7 @@ app.component('articles-group', {
             // group3: Data Vis
             // group4: Others
             articles: [{
+                    id: 0,
                     group: 4,
                     readLater: false,
                     type: "Journal Article",
@@ -64,6 +65,7 @@ app.component('articles-group', {
                     trend: 50
                 },
                 {
+                    id: 1,
                     group: 3,
                     readLater: true,
                     type: "Journal Article",
@@ -79,6 +81,7 @@ app.component('articles-group', {
                     trend: 60
                 },
                 {
+                    id: 2,
                     group: 2,
                     readLater: true,
                     type: "Journal Article",
@@ -94,6 +97,7 @@ app.component('articles-group', {
                     trend: 46
                 },
                 {
+                    id: 3,
                     group: 2,
                     readLater: true,
                     type: "Journal Article",
