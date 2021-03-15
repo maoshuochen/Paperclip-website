@@ -1,0 +1,9 @@
+{
+    "include": [
+      "./src/App.vue",
+      "./src/components/ArticleGroup",
+      "./src/components/Bus",
+      "./src/components/GroupMenu",
+      "./src/components/NavBar",
+    ]
+  }
